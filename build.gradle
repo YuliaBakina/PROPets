@@ -20,11 +20,11 @@ test {
     useTestNG()
 }
 
-/*task testRegr(type:Test){
+task testRegr(type:Test){
     useTestNG {
         suites 'src/test/resources/testng-Regression.xml'
     }
     if(project.hasProperty('browser')){
         systemProperty 'browser', "${browser}"
     }
-}*/
+}

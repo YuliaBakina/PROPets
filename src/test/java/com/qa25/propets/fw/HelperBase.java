@@ -1,8 +1,10 @@
 package com.qa25.propets.fw;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
+
+import java.io.File;
+import java.io.IOException;
 
 public class HelperBase {
     WebDriver wd;
@@ -37,6 +39,18 @@ public class HelperBase {
 
     public void delay(int timeout) throws InterruptedException {
         Thread.sleep(timeout);
+    }
+
+    public String takeScreenShot()  {
+        File tmp = ((TakesScreenshot)wd).getScreenshotAs(OutputType.FILE);
+        File screeenshot = new File("screenshot_" + System.currentTimeMillis() + ".png");
+
+        try {
+            Files.copy(tmp,screeenshot);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return screeenshot.getAbsolutePath();
     }
 
 }

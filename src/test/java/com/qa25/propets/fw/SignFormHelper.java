@@ -14,4 +14,13 @@ public class SignFormHelper extends HelperBase {
         click(By.className("closeIcon"));
     }
 
+    public void clickOnSignInTab() {
+        click(By.xpath("//div//div[@class='signingPageTabs_button__3gUPX signingPageTabs_signBtn__3Ymvo']"));
+      //  click(By.className("signingPageTabs_button__3gUPX signingPageTabs_signBtn__3Ymvo signingPageTabs_activeSignBtn__H46eI"));
+    }
+
+    public void clickOnSignUpTab() {
+       // click(By.xpath("//div[text()='Sign up']"));
+    }
+
 }

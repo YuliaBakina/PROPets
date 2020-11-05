@@ -10,8 +10,6 @@ public class MainPageLinksTest extends TestBase{
     }
 
 
-
-
     @Test(enabled = true)
     public void LinksHeaderTest() throws InterruptedException {
         //check Logo
