@@ -17,6 +17,11 @@ public class HelperBase {
         return wd.findElements(locator).size()>0;
     }
 
+    public String getText(By locator) {
+        return wd.findElement(locator).getText();
+    }
+
+
     public void type(By locator, String text) {
         click(locator);
         wd.findElement(locator).clear(); //- doesn't work for Login form

@@ -16,6 +16,10 @@ public class MainPageHelper extends HelperBase {
         }
     }
 
+    public boolean isMainPagePresented(){
+        return isElementPresent(By.className("wellcome_leftSide__4EtcI"));
+    }
+
     public void clickOnHeaderLogo() {
         click(By.cssSelector("[href='/home']"));
     }

@@ -43,9 +43,9 @@ public class TestBase {
     public void stopTest(ITestResult result){
 
         if(result.isSuccess()){
-            logger.info("PASSED: Test method --> " + result.getMethod().getMethodName());
+            logger.info("Test result: PASSED");
         }else{
-            logger.error("FAILED: Test method --> " + result.getMethod().getMethodName());
+            logger.error("Test result: FAILED");
             logger.info("Screenshot: " + appManager.getMainPage().takeScreenShot());
         }
 

@@ -1,25 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Regression" verbose="1" >
-    <test name="MainPage" >
+<suite name="UserSignin" verbose="1" >
+    <test name="UserSignin" >
         <classes>
-            <class name="com.qa25.propets.Tests.MainPageLinksTest">
-                <methods>
-                    <include name="LinksHeaderTest.*" />
-                    <include name="LinksBodyTest.*" />
-                </methods>
-            </class>
-
             <class name="com.qa25.propets.Tests.UserSignInTests">
                 <methods>
-                    <include name="formSignInPositiveTest.*" />
                     <include name="userSignInPositiveTest.*" />
                     <include name="userSignInNegativeTest.*" />
                 </methods>
             </class>
         </classes>
     </test>
-
-
 </suite>
 

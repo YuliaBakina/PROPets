@@ -18,19 +18,19 @@ public class DataProviders {
     public Iterator<Object[]>validUserSignInFromFile() throws IOException {
 
         BufferedReader reader = new BufferedReader(new FileReader(
-                new File("src/test/resources/DataProviderUserRegistration.csv")));
+                new File("src/test/resources/DataProviderValidUserSignIn.csv")));
 
         return readUsersSignInFromFile(reader);
     }
 
-/*    @DataProvider
+    @DataProvider
     public Iterator<Object[]>invalidUserSignInFromFile() throws IOException {
 
         BufferedReader reader = new BufferedReader(new FileReader(
-                new File("src/test/resources/DataProviderInvalidUserRegistration.csv")));
+                new File("src/test/resources/DataProviderInvalidUserSignIn.csv")));
 
         return readUsersSignInFromFile(reader);
-    }*/
+    }
 
     private Iterator<Object[]> readUsersSignInFromFile(BufferedReader reader) throws IOException {
         List<Object[]> list = new ArrayList<>();
@@ -41,8 +41,9 @@ public class DataProviders {
             String[] split = line.split(";");
 
             list.add(new Object[]{new User()
-                    .setEmail(split[0])
-                    .setPassword(split[1])});
+                    .setName(split[0])
+                    .setEmail(split[1])
+                    .setPassword(split[2])});
             line = reader.readLine();
         }
 

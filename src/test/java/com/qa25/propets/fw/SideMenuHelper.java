@@ -13,6 +13,10 @@ public class SideMenuHelper extends HelperBase {
         return isElementPresent(By.cssSelector("[href='/start']"));
     }
 
+    public String getUserName(){
+        return getText(By.className("user_item__3udbp"));
+    }
+
     public void clickOnLogout() {
         click(By.cssSelector("[href='/start']"));
     }

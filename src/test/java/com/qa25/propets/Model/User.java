@@ -28,17 +28,33 @@ public class User {
     }
 
     public User setEmail(String email) {
-        this.email = email;
+        if(email != null) {
+            this.email = email;
+        }else{
+            this.email = "";
+        }
         return this;
     }
 
     public User setPassword(String password) {
-        this.password = password;
+        if(password != null) {
+            this.password = password;
+        }else{
+            this.password = "";
+        }
         return this;
     }
 
     public User setPasswordConfirm(String passwordConfirm) {
         this.passwordConfirm = passwordConfirm;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "User: " +
+                "Name= " + name +
+                ", Email= " + email +
+                ", Password= " + password;
     }
 }
