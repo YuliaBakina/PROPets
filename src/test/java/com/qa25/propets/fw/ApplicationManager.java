@@ -15,31 +15,16 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
 
-    //WebDriver wd;
     EventFiringWebDriver wd;
     MainPageHelper mainPage;
     SignFormHelper signForm;
     SideMenuHelper sideMenu;
-/*    UserHelper user;
-    CarHelper car;
-    HeaderHelper header;
-    FooterHelper footer;*/
 
     String browser;
 
     public static class MyListener extends AbstractWebDriverEventListener {
 
         Logger logger = LoggerFactory.getLogger(MyListener.class);
-
-/*        @Override
-        public void beforeFindBy(By by, WebElement element, WebDriver driver) {
-            logger.info("Start search " + by + "...");
-        }
-
-        @Override
-        public void afterFindBy(By by, WebElement element, WebDriver driver) {
-            logger.info(by + " found.");
-        }*/
 
         @Override
         public void onException(Throwable throwable, WebDriver driver) {
@@ -50,22 +35,6 @@ public class ApplicationManager {
     public ApplicationManager(String browser) {
         this.browser = browser;
     }
-
-/*    public UserHelper getUser() {
-        return user;
-    }
-
-    public CarHelper getCar() {
-        return car;
-    }
-
-    public HeaderHelper getHeader() {
-        return header;
-    }
-
-    public FooterHelper getFooter(){
-        return footer;
-    }*/
 
     public MainPageHelper getMainPage() {
         return mainPage;

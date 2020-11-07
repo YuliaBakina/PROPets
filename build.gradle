@@ -34,3 +34,12 @@ task testRegr(type:Test){
         systemProperty 'browser', "${browser}"
     }
 }
+
+task testUserLogin(type:Test){
+    useTestNG {
+        suites 'src/test/resources/testng-UserLogin.xml'
+    }
+    if(project.hasProperty('browser')){
+        systemProperty 'browser', "${browser}"
+    }
+}
