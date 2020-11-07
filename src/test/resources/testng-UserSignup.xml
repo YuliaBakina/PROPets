@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="UserSignup" verbose="1" >
+    <test name="UserSignup" >
+        <classes>
+            <class name="com.qa25.propets.Tests.UserSignupTests">
+                <methods>
+                    <include name="userSignUpPositiveTest.*" />
+                    <include name="userSignUpNegativeTest.*" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

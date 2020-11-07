@@ -17,6 +17,15 @@
                     <include name="userSignInNegativeTest.*" />
                 </methods>
             </class>
+
+            <class name="com.qa25.propets.Tests.UserSignupTests">
+                <methods>
+                    <include name="formSignUpPositiveTest.*" />
+                    <include name="userSignUpPositiveTest.*" />
+                    <include name="userSignUpNegativeTest.*" />
+                </methods>
+            </class>
+
         </classes>
     </test>
 

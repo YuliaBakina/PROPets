@@ -51,20 +51,46 @@ public class DataProviders {
     }
 
     //User Registration
+    @DataProvider
+    public Iterator<Object[]>validUserSignUpFromFile() throws IOException {
+
+        BufferedReader reader = new BufferedReader(new FileReader(
+                new File("src/test/resources/DataProviderValidUserSignUp.csv")));
+
+        return readUsersSignUpFromFile(reader);
+    }
+
+    @DataProvider
+    public Iterator<Object[]>invalidUserSignUpFromFile() throws IOException {
+
+        BufferedReader reader = new BufferedReader(new FileReader(
+                new File("src/test/resources/DataProviderInvalidUserSignUp.csv")));
+
+        return readUsersSignUpFromFile(reader);
+    }
+
     private Iterator<Object[]> readUsersSignUpFromFile(BufferedReader reader) throws IOException {
         List<Object[]> list = new ArrayList<>();
         String line = reader.readLine();
+        int i = 0;
 
         while (line != null) {
 
             String[] split = line.split(";");
 
+            String email = new String();
+            email = split[1];
+            if(!email.contains("gmail") && !email.equals("")){
+                email = email + System.currentTimeMillis() + i + "@gmail.com";
+            }
+
             list.add(new Object[]{new User()
                     .setName(split[0])
-                    .setEmail(split[1])
+                    .setEmail(email)
                     .setPassword(split[2])
                     .setPasswordConfirm(split[3])});
             line = reader.readLine();
+            i++;
         }
 
         return list.iterator();

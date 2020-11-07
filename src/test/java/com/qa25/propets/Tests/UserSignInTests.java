@@ -51,10 +51,12 @@ public class UserSignInTests extends TestBase{
         appManager.getSignForm().clickSubmitButton();
 
         //check if user signed in
+        String[] split = user.getName().split(" ");
+
         logger.info("User Logged in. Actual result: "
                 + appManager.getSideMenu().getUserName()
-                + "; expected result: " + user.getName());
-        Assert.assertEquals(appManager.getSideMenu().getUserName(),user.getName());
+                + "; expected result: " + split[0]);
+        Assert.assertEquals(appManager.getSideMenu().getUserName(),split[0]);
         appManager.getSideMenu().clickOnLogout();
 
     }
