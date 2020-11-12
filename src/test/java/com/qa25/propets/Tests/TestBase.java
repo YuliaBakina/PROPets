@@ -46,7 +46,10 @@ public class TestBase {
             logger.info("Test result: PASSED");
         }else{
             logger.error("Test result: FAILED");
-            logger.info("Screenshot: " + appManager.getMainPage().takeScreenShot());
+            if(!result.getMethod().getMethodName().contains("RestAssured")){
+                logger.info("Screenshot: " + appManager.getMainPage().takeScreenShot());
+            }
+
         }
 
         logger.info("Stop test: " + result.getMethod().getMethodName());

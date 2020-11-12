@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="UserSignupRestAssured" verbose="1" >
+    <test name="UserSignupRestAssured" >
+        <classes>
+            <class name="com.qa25.propets.Tests.UserSignupRestAPITests">
+                <methods>
+                    <include name="userSignUpRestAssuredPositiveTest.*" />
+                    <include name="userSignUpRestAssuredNegativeTest.*" />
+                </methods>
+            </class>
+
+            <class name="com.qa25.propets.Tests.UserSignInRestAPITests">
+                <methods>
+                    <include name="userSignInRestAssuredPositiveTest.*" />
+                    <include name="userSignInRestAssuredNegativeTest.*" />
+                </methods>
+            </class>
+
+            <class name="com.qa25.propets.Tests.HomePagePostsRestAPITests">
+                <methods>
+                    <include name="getAllPostsHomePageRestAssuredPositiveTest.*" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

@@ -22,6 +22,8 @@ public class ApplicationManager {
 
     String browser;
 
+    String baseURL = "https://propets-mern.herokuapp.com/";
+
     public static class MyListener extends AbstractWebDriverEventListener {
 
         Logger logger = LoggerFactory.getLogger(MyListener.class);
@@ -34,6 +36,10 @@ public class ApplicationManager {
 
     public ApplicationManager(String browser) {
         this.browser = browser;
+    }
+
+    public String getBaseURL(){
+        return baseURL;
     }
 
     public MainPageHelper getMainPage() {
@@ -62,7 +68,8 @@ public class ApplicationManager {
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wd.manage().window().maximize();
 
-        wd.get("https://propets-mern.herokuapp.com/");
+       // wd.get("https://propets-mern.herokuapp.com/");
+        wd.get(baseURL);
 
         mainPage = new MainPageHelper(wd);
         signForm = new SignFormHelper(wd);

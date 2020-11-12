@@ -20,6 +20,10 @@ dependencies {
     implementation 'org.testng:testng:7.1.0'
     implementation 'ch.qos.logback:logback-classic:1.2.3' //библиотека логгера ch.qos.logback
 
+    implementation 'org.apache.httpcomponents:httpcomponents-client:4.5.12'
+    implementation 'org.apache.httpcomponents:fluent-hc:4.5.6'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'io.rest-assured:rest-assured:4.3.2'
 }
 
 test {
@@ -47,6 +51,15 @@ task testUserLogin(type:Test){
 task testUserSignup(type:Test){
     useTestNG {
         suites 'src/test/resources/testng-UserSignup.xml'
+    }
+    if(project.hasProperty('browser')){
+        systemProperty 'browser', "${browser}"
+    }
+}
+
+task testRestAssuredTests(type:Test){
+    useTestNG {
+        suites 'src/test/resources/testng-RestAssuredTests.xml'
     }
     if(project.hasProperty('browser')){
         systemProperty 'browser', "${browser}"
